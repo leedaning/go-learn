@@ -51,5 +51,12 @@ func main() {
 	//advance.MyContext()
 	//advance.MyContext2() //使用context.Background()创建一个空的context
 	//advance.MyContext3() //通过context.WithCancel()创建一个可取消的context，调用返回的cancel函数可以取消该context
-	advance.MyContext4() //通过context.WithTimeout()创建一个在指定时间后自动取消的context
+	//advance.MyContext4() //通过context.WithTimeout()创建一个在指定时间后自动取消的context
+
+	//advance.SelectCase() // 随机选择
+	//advance.SelectCase2() // 超时处理
+	//advance.SelectCase3() // 默认分支
+	//advance.SelectCase4() // 非阻塞通信
+	//advance.SelectCase5() // 结合context使用
+	advance.SelectCase6() // 多路复用
 }
