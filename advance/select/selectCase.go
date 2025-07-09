@@ -1,9 +1,8 @@
-package advance
+package _select
 
 import (
 	"fmt"
 	"sync"
-	"time"
 )
 
 /*
@@ -18,16 +17,15 @@ func SelectCase() {
 
 	go func() {
 		wg.Done()
-		time.Sleep(1 * time.Second)
 		ch1 <- 1
 	}()
 
 	go func() {
 		wg.Done()
-		time.Sleep(1 * time.Second)
 		ch2 <- 2
 	}()
 
+	wg.Wait()
 	//for i := 0; i < 2; i++ {
 
 	select {
@@ -38,5 +36,4 @@ func SelectCase() {
 	}
 	//time.Sleep(1 * time.Second)
 	//}
-	wg.Wait()
 }

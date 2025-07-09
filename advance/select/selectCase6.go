@@ -1,4 +1,4 @@
-package advance
+package _select
 
 import (
 	"fmt"
@@ -31,7 +31,6 @@ func SelectCase6() {
 	}()
 
 	for {
-
 		select {
 		case v, ok := <-ch1: //  ok 用于判断通道是否已经关闭。如果 ok 为 false，说明通道已经关闭。
 			if !ok {
@@ -45,6 +44,9 @@ func SelectCase6() {
 				return
 			}
 			fmt.Println("Received from ch2 value:", v)
+		case <-time.After(time.Millisecond * 100):
+			fmt.Println("timeout")
+			return
 		}
 	}
 }

@@ -1,9 +1,10 @@
-package advance
+package _select
 
 import (
 	"fmt"
 )
 
+// 非阻塞，我的理解就是有default，这样select就不会阻塞了
 func SelectCase4() {
 	ch := make(chan int)
 

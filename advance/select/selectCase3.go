@@ -1,7 +1,8 @@
-package advance
+package _select
 
 import (
 	"fmt"
+	"sync"
 	"time"
 )
 
@@ -12,11 +13,11 @@ default 分支是可选的，如果没有任何通道操作可以立即执行，
 func SelectCase3() {
 	ch := make(chan int)
 
-	/*wg := sync.WaitGroup{}
-	wg.Add(1)*/
+	wg := sync.WaitGroup{}
+	wg.Add(1)
 	go func() {
-		//wg.Done()
-		//time.Sleep(1 * time.Second)
+		wg.Done()
+		time.Sleep(1 * time.Second)
 		ch <- 1
 	}()
 
@@ -32,5 +33,5 @@ func SelectCase3() {
 	// 继续执行其他代码
 	time.Sleep(1 * time.Second)
 
-	//wg.Wait()
+	wg.Wait()
 }

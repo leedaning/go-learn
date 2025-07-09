@@ -1,6 +1,6 @@
 package main
 
-import "MyGo/advance"
+import "MyGo/advance/reflect"
 
 //TIP <p>To run your code, right-click the code and select <b>Run</b>.</p> <p>Alternatively, click
 // the <icon src="AllIcons.Actions.Execute"/> icon in the gutter and select the <b>Run</b> menu item from here.</p>
@@ -53,10 +53,42 @@ func main() {
 	//advance.MyContext3() //通过context.WithCancel()创建一个可取消的context，调用返回的cancel函数可以取消该context
 	//advance.MyContext4() //通过context.WithTimeout()创建一个在指定时间后自动取消的context
 
-	//advance.SelectCase() // 随机选择
-	//advance.SelectCase2() // 超时处理
-	//advance.SelectCase3() // 默认分支
-	//advance.SelectCase4() // 非阻塞通信
-	//advance.SelectCase5() // 结合context使用
-	advance.SelectCase6() // 多路复用
+	//_select.SelectCase() // 随机选择
+	//_select.SelectCase2() // 超时处理
+	//_select.SelectCase3() // 默认分支
+	//_select.SelectCase4() // 非阻塞通信
+	//_select.SelectCase5() // 结合context使用
+	//_select.SelectCase6() // 多路复用
+	//_select.SelectCase7()
+	//_select.SelectCase8() // 退出机制
+	//_select.SelectCase9() // 定时任务
+	//_select.SelectCase10() // 优先级控制
+	//_select.SelectCase11() // 无限等待
+	//_select.SelectCase12() // 反射与select
+
+	// reflect 反射
+	_reflect.Reflect1()
+
+	// 基础回顾
+	//basic.MyFor()
+	//basic.SearchRepeat() // 查找重复的行
+	//basic.MyLissajous()
+	//basic.GetUrl() // 获取url的内容， $ go build gopl.io/ch1/fetch	$ ./fetch http://gopl.io
+	//basic.GetUrlCont2()
+
+	//http.HandleFunc("/", handler)
+	/*handler2.Router()
+	log.Fatal(http.ListenAndServe(":8080", nil))*/
+
+	//交换变量值
+	/*i, j := 10, 20
+	fmt.Println("i:", i, "\tj:", j)
+	i, j = j, i
+	fmt.Println("i:", i, "\tj:", j)*/
+
+	//basic.MyPointer()
 }
+
+/*func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "URL.Path = %q\n", r.URL.Path)
+}*/
